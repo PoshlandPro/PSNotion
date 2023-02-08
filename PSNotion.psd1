@@ -51,7 +51,7 @@ Copyright = '(c) Damian Garbus. All rights reserved.'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
+RequiredModules = @("Microsoft.PowerShell.SecretStore","Microsoft.PowerShell.SecretManagement")
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
