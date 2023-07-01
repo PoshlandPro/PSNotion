@@ -23,7 +23,7 @@ function Get-NotionPage{
         $ResponseSummary = $Response
     
     
-        If ($All) {
+        If ($All -and $Response.has_more -eq $true) {
             
             do {
                 $Body = @{
