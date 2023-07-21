@@ -1,2 +1,2 @@
-$ModulePath = (Get-Item "$PSScriptRoot/../Movies").FullName
+$ModulePath = (Get-Item "$PSScriptRoot/../../src").FullName
 # Publish-Module -Path $ModulePath -NuGetApiKey $env:NUGET_KEY
