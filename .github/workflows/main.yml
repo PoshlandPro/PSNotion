@@ -9,6 +9,6 @@ jobs:
         - uses: actions/checkout@v1
         - name: Publish
           env:
-            APIKEY: ${{ secrets.APIKEY }}
+            APIKEY: ${{ secrets.NUGET_KEY }}
           run: .\.github\workflows\publish.ps1
           shell: pwsh
