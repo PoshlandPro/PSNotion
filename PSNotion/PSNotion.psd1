@@ -12,7 +12,7 @@
 RootModule = 'PSNotion.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.1'
+ModuleVersion = '1.0.4'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -24,13 +24,13 @@ GUID = 'a0c3d4c8-58ad-4092-abaf-09144a6f2b8c'
 Author = 'Damian Garbus'
 
 # Company or vendor of this module
-CompanyName = 'Unknown'
+CompanyName = 'Conceptive Damian Garbus'
 
 # Copyright statement for this module
 Copyright = '(c) Damian Garbus. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'Powershell Module for Notion'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''
@@ -52,13 +52,12 @@ Copyright = '(c) Damian Garbus. All rights reserved.'
 
 # Modules that must be imported into the global environment prior to importing this module
 RequiredModules = @('Microsoft.PowerShell.SecretStore','Microsoft.PowerShell.SecretManagement')
-# RequiredModules = @("PSN", @{ModuleName="Microsoft.PowerShell.SecretStore"; ModuleVersion="1.0.6"; GUID="6b983e67-c297-431a-916c-f4ce24dd7bac"})
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-#ScriptsToProcess = @("./classes/NotionBlocks.ps1")
+#ScriptsToProcess = ""
 
 # Type files (.ps1xml) to be loaded when importing this module
 # TypesToProcess = @()
@@ -110,10 +109,10 @@ PrivateData = @{
         # Tags = @()
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/PoshlandPro/PSNotion/blob/main/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/PoshlandPro/PSNotion/tree/main'
 
         # A URL to an icon representing this module.
         # IconUri = ''

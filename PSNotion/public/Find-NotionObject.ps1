@@ -2,7 +2,7 @@ function Find-NotionObject {
 [CmdletBinding()]
 param (
     [Parameter(Mandatory)]
-    [ValidateSet(“database”,”page”)]
+    [ValidateSet("database","page")]
     [Alias("object")]
     [string]
     $ObjectType,

@@ -2,25 +2,14 @@
 A PowerShell module for interacting with [Notion](https://notion.com/) API.
 
 ## Installation
-### Windows machine
-1. Download the module from the [releases page](https://github.com/PoshlandPro/PSNotion/releases/).
-2. Unzip the package to C:\Program Files\WindowsPowerShell\Modules or $env:UserProfile\Documents\WindowsPowerShell\Modules.
-
-### MacOS machine
-1. Download the module from the [releases page](https://github.com/PoshlandPro/PSNotion/releases/).
-2. Unzip the package to /Users/UserName/.local/share/powershell/Modules/
-
-# Prerequisites
-* Before using this module, you need to obtain an API Key from Notion. You can find instructions on how to do that in the [Notion API Docs](https://developers.notion.com/docs/create-a-notion-integration). You need to finished only steps 1 and 2 from the link. 
-* Install the necessary modules
+* Install module from Powershell Gallery
 ```powershell
-Install-Module "Microsoft.PowerShell.SecretStore"
-Install-Module "Microsoft.PowerShell.SecretManagement"
+Install-Module "PSNotion"
 ```
 
 ## Usage
 ### First configuration
-
+* Before using this module, you need to obtain an API Key from Notion. You can find instructions on how to do that in the [Notion API Docs](https://developers.notion.com/docs/create-a-notion-integration). You need to finished only steps 1 and 2 from the link. 
 To use the module, first set your Notion API Key using the following command:
 ```Powershell
 New-NotionConfig -Name MyFirstAccount -APIKey secret_iGxXXXXXXXXXXXXXXXXXXXXXXXXMpZ
