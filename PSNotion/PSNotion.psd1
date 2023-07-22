@@ -52,7 +52,7 @@ Description = 'Powershell Module for Notion'
 
 # Modules that must be imported into the global environment prior to importing this module
 RequiredModules = @('Microsoft.PowerShell.SecretStore','Microsoft.PowerShell.SecretManagement')
-# RequiredModules = @(@{ModuleName = 'Microsoft.Graph.Authentication'; ModuleVersion = '1.11.0'; }, @{ModuleName = 'Microsoft.Graph.Search'; RequiredVersion = '1.11.0'; })
+
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
 
