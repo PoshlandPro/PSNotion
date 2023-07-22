@@ -51,8 +51,8 @@ Copyright = '(c) Damian Garbus. All rights reserved.'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @('Microsoft.PowerShell.SecretStore','Microsoft.PowerShell.SecretManagement')
-RequiredModules = @(@{ModuleName="Microsoft.PowerShell.SecretStore"; ModuleVersion="1.0.6"; GUID="6b983e67-c297-431a-916c-f4ce24dd7bac"})
+RequiredModules = @('Microsoft.PowerShell.SecretStore','Microsoft.PowerShell.SecretManagement')
+# RequiredModules = @(@{ModuleName="Microsoft.PowerShell.SecretStore"; ModuleVersion="1.0.6"; GUID="6b983e67-c297-431a-916c-f4ce24dd7bac"})
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
