@@ -79,6 +79,8 @@ FunctionsToExport = @(
     'Update-NotionConfig'
     'Set-NotionBlock'
     'New-NotionPage'
+    'Switch-NotionConfig'
+    'Get-NotionConfig'
 )
 
 
