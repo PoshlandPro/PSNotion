@@ -18,7 +18,11 @@ function New-NotionPage {
         [Parameter(ParameterSetName = 'InPage')]
         [Parameter(ParameterSetName = 'InDatabase')]
         [string]
-        $PageTitle
+        $PageTitle,
+        [Parameter(Mandatory)]
+        [Parameter(ParameterSetName = 'InDatabase')]
+        [hashtable]
+        $Properties
 
     )
 
@@ -44,11 +48,11 @@ function New-NotionPage {
     elseif ($InDatabase) {
         $dbProperties = (Get-NotionDatabase -id $ParentId).properties 
         $PropertyNames = ($dbProperties |  Get-Member | Where-Object  {$_.membertype -eq "NoteProperty"}).Name       
+        $finalProperties = @{}
         foreach ($property in $PropertyNames) {
             $titletype = $dbProperties.$property | Where-Object {$_.type -eq "title"}
             if ($titletype) {
-                $titleProperty = @{
-                    $property = @{
+                $finalProperties.Add($property,@{
                         title = @(
                             @{
                                 text = @{
@@ -56,16 +60,19 @@ function New-NotionPage {
                                 }
                             }
                         )
-                    }
-                }
+                    })
+                
             }
+        }
+        if ($Properties) {
+            $finalProperties += $Properties
         }
 
         $Body = @{
             parent = @{
                 database_id = $ParentId
             }
-            properties = $titleProperty
+            properties = $finalProperties
         }
         Invoke-NotionRequest -UriEndpoint "/pages" -Method POST -Body ($Body | ConvertTo-Json -Depth 10)
         
