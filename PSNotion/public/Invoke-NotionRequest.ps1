@@ -7,7 +7,13 @@ function Invoke-NotionRequest {
     )
     
     begin {
-        $APIKey = (Get-Secret -Name $ActiveAccount -AsPlainText)['APIKey']
+        If (![string]::IsNullOrEmpty($env:NotionAPIKey)) {
+            $APIKey = $env:NotionAPIKey
+        }else {
+            $APIKey = (Get-Secret -Name $ActiveAccount -AsPlainText)['APIKey']
+        }
+
+        
         $Headers = @{
             "Authorization" = "Bearer $APIKey"
             "Notion-Version" = "2022-06-28"
