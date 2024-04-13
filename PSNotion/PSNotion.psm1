@@ -2,6 +2,11 @@ Get-ChildItem "$PSScriptRoot/public/*.ps1" | ForEach-Object { . $_ }
 $Script:SecretVaultName  = "MyVault"
 $Script:RootUri  = "https://api.notion.com/v1"
 
+if ($env:NotionAPIKey) {
+    Write-Warning "You have Notion API key in your environment variables (NotionAPIKey). It will be used for authentication"
+    return
+}
+
 $RequiredModules = @(
     "Microsoft.PowerShell.SecretStore"
     "Microsoft.PowerShell.SecretManagement"
