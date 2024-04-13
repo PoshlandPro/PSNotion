@@ -14,12 +14,17 @@ function New-NotionPage {
         [Parameter(ParameterSetName = 'InDatabase')]
         [string]
         $ParentId,
-        [Parameter(Mandatory)]
+        [Parameter()]
         [Parameter(ParameterSetName = 'InPage')]
         [Parameter(ParameterSetName = 'InDatabase')]
         [string]
         $PageTitle,
-        [Parameter(Mandatory)]
+        [Parameter()]
+        [Parameter(ParameterSetName = 'InPage')]
+        [Parameter(ParameterSetName = 'InDatabase')]
+        [string]
+        $PageLink,
+        [Parameter()]
         [Parameter(ParameterSetName = 'InDatabase')]
         [hashtable]
         $Properties
@@ -57,6 +62,7 @@ function New-NotionPage {
                             @{
                                 text = @{
                                     content = "$PageTitle"
+                                    link = if($PageLink) {@{url = $PageLink} } else { $null }
                                 }
                             }
                         )
